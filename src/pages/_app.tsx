@@ -1,6 +1,25 @@
 import "@/styles/globals.css";
-import type { AppProps } from "next/app";
+import {AppPropsWithLayout} from "@/models/common.types";
+import EmptyLayout from "@/components/layouts/EmptyLayout";
+import HeadTag from "@/components/layouts/HeadTag";
+import LanguagesProvider from "@/languages/LanguagesProvider";
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+export default function App({ Component, pageProps }: AppPropsWithLayout) {
+
+  const Layout = Component.Layout ?? EmptyLayout;
+  const title = Component.Title ?? '';
+  const description = Component.Description ?? '';
+  
+  return (
+      <main
+          className="min-h-screen font-sans antialiased relative bg-white overflow-y-auto, overflow-x-hidden"
+      >
+        <LanguagesProvider pageProps={pageProps}>
+          <HeadTag title={title} description={description}/> 
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </LanguagesProvider>
+      </main>
+  );
 }
