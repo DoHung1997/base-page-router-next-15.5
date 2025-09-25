@@ -1,4 +1,8 @@
 import React from 'react';
+import "@ant-design/v5-patch-for-react-19"
+import {ConfigProvider} from "antd"
+
+import theme from "@/providers/AntdProvider/themeConfig";  
 
 type PropsType = {
     children: React.ReactNode;
@@ -6,9 +10,9 @@ type PropsType = {
 
 const AntdProvider: React.FC<PropsType> = ({children}) => {
     return (
-        <>
+        <ConfigProvider theme={theme}>
             {children}
-        </>
+        </ConfigProvider>
     );
 };
 
