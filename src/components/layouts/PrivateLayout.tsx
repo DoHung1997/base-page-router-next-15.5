@@ -1,12 +1,14 @@
 import React from 'react';
 
-type PropsType = {}
+type PropsType = {
+    children: React.ReactNode;
+}
 
-const PrivateLayout: React.FC<PropsType> = (props) => {
+const PrivateLayout: React.FC<PropsType> = ({children}) => {
     return (
-        <div>
-
-        </div>
+        <>
+            {children}
+        </>
     );
 };
 

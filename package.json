@@ -9,6 +9,8 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@ant-design/v5-patch-for-react-19": "^1.0.3",
+    "antd": "^5.27.4",
     "js-cookie": "^3.0.5",
     "next": "15.5.3",
     "next-intl": "^4.3.8",

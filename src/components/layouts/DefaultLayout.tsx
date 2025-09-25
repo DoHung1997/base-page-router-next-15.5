@@ -4,11 +4,11 @@ type PropsType = {
     children: React.ReactNode;
 }
 
-const DefaultLayout: React.FC<PropsType> = (props) => {
+const DefaultLayout: React.FC<PropsType> = ({children}) => {
     return (
-        <div>
-
-        </div>
+        <>
+            {children}
+        </>
     );
 };
 

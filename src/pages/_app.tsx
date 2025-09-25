@@ -2,7 +2,7 @@ import "@/styles/globals.css";
 import {AppPropsWithLayout} from "@/models/common.types";
 import EmptyLayout from "@/components/layouts/EmptyLayout";
 import HeadTag from "@/components/layouts/HeadTag";
-import LanguagesProvider from "@/languages/LanguagesProvider";
+import LanguagesProvider from "@/providers/LanguagesProvider";
 
 export default function App({ Component, pageProps }: AppPropsWithLayout) {
 
