@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {useRouter} from "next/router";
-import { localStorageSet } from "@/helpers/storage-helper";
+import { localStorageHelper } from "@/helpers/storage-helper";
 import {StorageKey} from "@/constants";
 import {NextIntlClientProvider} from "next-intl";
 
@@ -17,7 +17,7 @@ const LanguagesProvider: React.FC<PropsType> = (props) => {
 
     // Effect
     useEffect(() => {
-        localStorageSet(StorageKey.LOCALE, locale ?? "en")
+        localStorageHelper.set(StorageKey.LOCALE, locale ?? "en")
     }, [locale])
     
     return (

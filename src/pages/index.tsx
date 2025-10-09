@@ -37,7 +37,7 @@ export default function HomePage() {
 }
 
 HomePage.Layout = DefaultLayout;
-HomePage.Title = "Home.title";
+HomePage.Title = "HomePage.title";
 
 export async function getStaticProps({locale}: { locale: string }) {
   return {

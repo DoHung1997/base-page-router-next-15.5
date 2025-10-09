@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
     locales: ["en", "vi"],
     defaultLocale: 'en'
   },
+  devIndicators: false,
   webpack: (config) => {
     // camelCase style names from css modules
     config.module.rules

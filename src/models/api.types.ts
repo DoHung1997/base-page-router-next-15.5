@@ -9,5 +9,6 @@ export type LoginType = {
     token?: string;
     refreshToken?: string;
     expires?: number;
-    expiresIn?: number; 
+    expiresIn?: number;
+    tokenType?: string;
 }

@@ -1,3 +1,4 @@
 export enum LanguageKeyName {
-    HomePage = "HomePage"
+    HomePage = "HomePage",
+    AuthPage = "AuthPage",
 }

@@ -1,5 +1,14 @@
 {
-  "Home": {
-    "title": "Trang chủ"
+  "HomePage": {
+    "title": "Home"
+  },
+  "AuthPage": {
+    "login": {
+      "title": "Đăng nhập vào tài khoản của bạn",
+      "username": "Tên đăng nhập"
+    },
+    "register": {
+      "title": "Đăng ký tài khoản mới"
+    }
   }
 }

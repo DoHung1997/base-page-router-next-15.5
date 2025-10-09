@@ -1,5 +1,14 @@
 {
   "HomePage": {
     "title": "Home"
+  },
+  "AuthPage": {
+    "login": {
+      "title": "Login to your account",
+      "username": "Username"
+    },
+    "register": {
+      "title": "Register new account"
+    }
   }
 }

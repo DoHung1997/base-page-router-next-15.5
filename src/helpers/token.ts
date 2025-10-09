@@ -1,11 +1,11 @@
 import {ApiResponse, LoginType} from "@/models";
 
-export const isExpired = (time: string | number): boolean => {
+export const isExpired = (time: string | number | null): boolean => {
     try {
         if (typeof time === 'string') {
             return Date.now() > Number(time);
         } else {
-            return Date.now() > time;
+            return Date.now() > (time ?? 0);
         }
     } catch (err: any) {
         return true;

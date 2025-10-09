@@ -13,7 +13,7 @@ const HeadTag: React.FC<PropsType> = ({title, description}) => {
     const appDescription = process.env.NEXT_PUBLIC_APP_DESCRIPTION ?? "";
     
     return (
-        <div>
+        <>
             <Head>
                 <title>{title ? `${t(title)} ${appName}` : appName}</title>
                 <meta name='viewport' content='width=device-width, initial-scale=1'/>
@@ -25,7 +25,7 @@ const HeadTag: React.FC<PropsType> = ({title, description}) => {
                 <meta property="og:type" content="website"/>
                 <meta property="og:image" content="/assets/img/rsc.png"/>
             </Head>
-        </div>
+        </>
     );
 };
 
