@@ -8,13 +8,17 @@
 
 .login-form-container {
   width: clamp(25rem, 25%, 100rem);
-  height: clamp(20rem, 65%, 200rem);
-  padding: 1.5rem;
   text-align: center;
   color: var(--text-primary);
+  background: rgba(30, 30, 30, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(51, 51, 51, 0.8);
+  border-radius: 1.5rem;
+  padding: 48px 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 100px rgba(59, 130, 246, 0.03);
   
   .form {
     width: clamp(25rem, 30%, 100rem);
-    margin: 5rem auto;
+    margin: 3rem auto 1rem;
   }
 }

@@ -1,14 +1,16 @@
 import React, {useCallback} from 'react';
 import { Button, Checkbox, Form, Input, Flex } from 'antd';
-import { LockOutlined, UserOutlined } from '@ant-design/icons';
+import { LockOutlined, MailOutlined } from '@ant-design/icons';
 
 import styles from './AuthContainer.module.scss'
 import {useTranslations} from "next-intl";
+import ButtonAnimation from "@/components/ui/ButtonAnimation";
+import InputAnimation from "@/components/ui/InputAnimation";
 
 type PropsType = {}
 
 const LoginForm: React.FC<PropsType> = (props) => {
-    const t = useTranslations("AuthPage");
+    const t = useTranslations("AuthPage.login");
     
     // Callbacks
     const onFinish = useCallback((values: any) => {
@@ -16,7 +18,7 @@ const LoginForm: React.FC<PropsType> = (props) => {
     }, []);
     
     return (
-        <div className={`${styles.loginFormContainer} backdrop-blur-xl bg-white/5 rounded-2xl p-8 shadow-2xl border border-white/10 transition-all duration-300 hover:border-white/20`}>
+        <div className={`${styles.loginFormContainer}`}>
             <div className="text-center mb-8">
                 <div className="inline-block px-4 py-3 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 mb-4">
                     <LockOutlined className="text-white text-3xl font-extrabold" />
@@ -30,32 +32,30 @@ const LoginForm: React.FC<PropsType> = (props) => {
                 initialValues={{ remember: true }}
                 className={styles.form}
                 onFinish={onFinish}
-                layout={"vertical"}
+                noValidate={false}
             >
                 <Form.Item
-                    label={(
-                        <p className={"text-gray-300"}>
-                            {t("login.username")}
-                        </p>
-                    )}
                     name="username"
                     rules={[{ required: true, message: 'Please input your Username!' }]}
+                    required
+                    wrapperCol={{className: "mb-4"}}
+                    getValueProps={(value) => {
+                        console.log('value', value);
+                        return value;
+                    }}
                 >
-                    <Input 
-                        prefix={<UserOutlined />} 
-                        placeholder="Username"
-                        className={"bg-white/5 border border-white/10 rounded-lg py-3 pl-12 pr-4 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all"}
-                    />
+                    <InputAnimation icon={MailOutlined} type={"email"} placeholder={"Email"} name={"username"} />
                 </Form.Item>
                 
                 <Form.Item
                     name="password"
                     rules={[{ required: true, message: 'Please input your Password!' }]}
+                    wrapperCol={{className: "mb-4"}}
                 >
-                    <Input prefix={<LockOutlined />} type="password" placeholder="Password" />
+                    <InputAnimation icon={LockOutlined} type={"password"} placeholder={"Password"} />
                 </Form.Item>
                 
-                <Form.Item>
+                <Form.Item className={"text-white"}>
                     <Flex justify="space-between" align="center">
                         <Form.Item name="remember" valuePropName="checked" noStyle>
                             <Checkbox>Remember me</Checkbox>
@@ -63,13 +63,16 @@ const LoginForm: React.FC<PropsType> = (props) => {
                         <a href="">Forgot password</a>
                     </Flex>
                 </Form.Item>
-
+            
                 <Form.Item>
-                    <Button block type="primary" htmlType="submit">
-                        Log in
-                    </Button>
+                    <ButtonAnimation
+                        title={t("login_title_btn")}
+                        htmlType={"submit"}
+                    />
                 </Form.Item>
             </Form>
+
+            
         </div>
     );
 };

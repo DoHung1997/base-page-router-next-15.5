@@ -5,7 +5,8 @@
   "AuthPage": {
     "login": {
       "title": "Login to your account",
-      "username": "Username"
+      "username": "Username",
+      "login_title_btn": "Login"
     },
     "register": {
       "title": "Register new account"
