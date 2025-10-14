@@ -10,17 +10,18 @@ type PropsType = {
     placeholder?: string;
     required?: boolean;
     name?: string;
+    value?: string;
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const InputAnimation: React.FC<PropsType> = (props) => {
-    const {icon, type, className, placeholder, required, name} = props
+    const {icon, type, className, placeholder, required, name, value, onChange} = props
     const [passwordStatus, setPasswordStatus] = useState<boolean>(true);
     
     const renderIcon = useMemo(() => {
-        const Icon = icon;
         return icon ? (
             <div className={styles.inputIcon}>
-                <Icon />
+                {icon}
                 {required && <span className={"text-red-600 ml-0.5"}>*</span>}
             </div>
         ) : null
@@ -41,8 +42,8 @@ const InputAnimation: React.FC<PropsType> = (props) => {
                 type={memoTypeInput}
                 className={`${styles.inputField} ${className ?? ""}`}
                 placeholder={placeholder}
-                required={false}
-                autocomplete="off"
+                value={value}
+                onChange={onChange}
             />
             {type === "password" && (
                 <button className={styles.inputPasswordButton} type={"button"} onClick={() => setPasswordStatus(prev => !prev)}>

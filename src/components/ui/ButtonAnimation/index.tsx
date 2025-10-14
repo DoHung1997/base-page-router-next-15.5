@@ -6,7 +6,7 @@ type PropsType = {
     title?: string | ReactNode
     className?: string;
     onClick?: () => void;
-    htmlType?: string;
+    htmlType?: "button" | "reset" | "submit" | undefined;
     hover?: boolean;
 }
 

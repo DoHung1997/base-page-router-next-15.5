@@ -8,8 +8,7 @@
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
-  color: #a3a3a3;
-  
+  color: var(--text-primary);
 }
 
 .input-field {
@@ -25,7 +24,7 @@
 }
 
 .input-field::placeholder {
-  color: #a3a3a3;
+  color: var(--text-primary);
 }
 
 .input-field:focus {
@@ -42,7 +41,7 @@
   
   span {
     font-size: 1.2rem;
-    color: #a3a3a3;
+    color: var(--text-primary);
     transition: all 0.2s ease;
   }
 }
