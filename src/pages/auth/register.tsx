@@ -1,9 +1,16 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useTranslations} from "next-intl";
 import {LanguageKeyName} from "@/languages/language-key-name";
+import {useRouter} from "next/router";
 
 export default function Register() {
     const t = useTranslations(LanguageKeyName.AuthPage);
+    const {push} = useRouter()
+
+    useEffect(() => {
+        push('/')
+    }, []);
+    
     return (
         <div>
     

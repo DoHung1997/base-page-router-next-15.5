@@ -1,10 +1,13 @@
 @import "tailwindcss";
 
 :root {
+  /* Global colors */
   --background: #000000;
   --foreground: #cccccc;
   --color-primary: #333333;
   --text-primary: #a3a3a3;
+  
+  /* Global Size (width, height, padding, margin, etc.) */
 }
 
 @theme inline {
