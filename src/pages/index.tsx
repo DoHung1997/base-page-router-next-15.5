@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import {useTranslations} from "next-intl";
 import DefaultLayout from "@/components/layouts/DefaultLayout";
 import {LanguageKeyName} from "@/languages/language-key-name";
+import HomeContainer from "@/components/HomeContainer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,19 +19,9 @@ export default function HomePage() {
   const t = useTranslations(LanguageKeyName.HomePage);
   
   return (
-      <div className="w-full h-full">
-        <div className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-          <h1>{t("title")}</h1>
-          <Image
-              className="dark:invert"
-              src="/file.svg"
-              alt="Next.js logo"
-              width={180}
-              height={38}
-              priority
-          />
+        <div className="w-full h-full flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+          <HomeContainer />
         </div>
-      </div>
   );
 }
 

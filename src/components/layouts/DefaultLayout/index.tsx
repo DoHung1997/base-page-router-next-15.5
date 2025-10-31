@@ -15,7 +15,7 @@ const DefaultLayout: React.FC<PropsType> = ({children}) => {
     return (
         <Layout className={styles.containerLayout}>
             {/* Sidebar */}
-            <SiderBar />
+            {/*<SiderBar />*/}
             
             <Layout>
                 {/* Header */}
@@ -27,7 +27,7 @@ const DefaultLayout: React.FC<PropsType> = ({children}) => {
                 </BodyContent>
                 
                 {/* Footer */}
-                <FooterCustom />
+                {/*<FooterCustom />*/}
             </Layout>
         </Layout>
     );
