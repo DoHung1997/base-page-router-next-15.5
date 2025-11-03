@@ -10,7 +10,7 @@ type PropsType = {}
 const HeaderBar: React.FC<PropsType> = (props) => {
     return (
         <Header className={styles.headerContainer}>
-            HeaderBar
+            <div className={"text-white font-bold text-3xl"}>Sổ tay ghi nợ của Huy</div>
         </Header>
     );
 };
